@@ -14,7 +14,35 @@ Image comparison and offset detection optimized for web screenshots.
 | 1 | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample1_RESULT.png) | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample1_RESULT_MATCHES.png) |
 | 2 | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample2_RESULT.png) | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample2_RESULT_MATCHES.png) |
 
-github:[PapriKey/webshotcompare](https://github.com/PapriKey/webshotcompare)
+sample 1 output:
+```js
+{
+  diffPass: false,
+  shiftPass: false,
+  diff: { diffPrecent: 5.39483400081052, imgDistance: 0.03125 },
+  shift: { rate: 0.5106382978723404, shiftCount: 24, goodMatchesCount: 47 },
+  img: {
+    diff: '/Users/key/Desktop/mini/testForImgCom/images/RESULT.png',
+    shift: '/Users/key/Desktop/mini/testForImgCom/node_modules/webshotcompare/Users/key/Desktop/mini/testForImgCom/images/RESULT_MATCHES.png'
+  }
+}
+```
+
+sample 2 output:
+```js
+{
+  diffPass: true,
+  shiftPass: true,
+  diff: { diffPrecent: 0.49524, imgDistance: 0 },
+  shift: { rate: 0, shiftCount: 0, goodMatchesCount: 464 },
+  img: {
+    diff: '/Users/key/Desktop/mini/testForImgCom/images/RESULT.png',
+    shift: '/Users/key/Desktop/mini/testForImgCom/node_modules/webshotcompare/Users/key/Desktop/mini/testForImgCom/images/RESULT_MATCHES.png'
+  }
+}
+```
+
+give a star: [PapriKey/webshotcompare](https://github.com/PapriKey/webshotcompare)
 
 
 

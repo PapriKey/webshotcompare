@@ -1,6 +1,6 @@
 {
   "name": "webshotcompare",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Image comparison and offset detection optimized for web screenshots.",
   "main": "src/index.js",
   "scripts": {
@@ -22,11 +22,7 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "i": "^0.3.7",
     "jimp": "^0.16.0",
-    "pixelmatch": "^5.3.0",
-    "pngjs": "^6.0.0",
-    "ssim.js": "^3.5.0"
-  },
-  "devDependencies": {}
+    "pixelmatch": "^5.3.0"
+  }
 }
