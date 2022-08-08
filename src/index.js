@@ -62,6 +62,21 @@ async function onRuntimeInitialized(
       diffMask: options.pixelMatch_diffMask,
     }
   );
+
+  let imgDiffResult = await Jimp.create(width, height);
+  pixelMatch(
+    imgBefore.bitmap.data,
+    imgAfter.bitmap.data,
+    imgDiffResult.bitmap.data,
+    width,
+    height,
+    {
+      threshold: options.pixelMatch_threshold,
+      diffColorAlt: [255, 0, 0],
+    }
+  );
+  imgDiffResult.writeAsync(path.resolve(outPutFileName + "/RESULT_DIFF.png"));
+
   const imgDistance = Jimp.distance(imgBefore, imgAfter); //感知距离
   const pixelDiffValue = (pixelDiff / (width * height)) * 100;
   options.debug &&
@@ -281,10 +296,8 @@ async function onRuntimeInitialized(
 
   RESULT.img = {
     diff: path.resolve(outPutFileName + "/RESULT.png"),
-    shift: path.resolve(
-      __dirname,
-      "../" + outPutFileName + "/RESULT_MATCHES.png"
-    ),
+    shift: path.resolve(outPutFileName + "/RESULT_MATCHES.png"),
+    diffByPixel: path.resolve(outPutFileName + "/RESULT_DIFF.png"),
   };
 
   keypoints1.delete();

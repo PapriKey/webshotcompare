@@ -9,10 +9,10 @@ Image comparison and offset detection optimized for web screenshots.
 5. 稀少的OpenCV.js实践参考代码(easy-to-read OpenCV.js practice code)
 
 
-| SAMPLE | RESULT.png | RESULT_MATCHES.png |
-| :-----:| :----: | :----: |
-| 1 | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample1_RESULT.png) | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample1_RESULT_MATCHES.png) |
-| 2 | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample2_RESULT.png) | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample2_RESULT_MATCHES.png) |
+| SAMPLE | RESULT.png | RESULT_MATCHES.png |RESULT_DIFF.png |
+| :-----:| :----: | :----: |:----: |
+| 1 | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample1_RESULT.png) | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample1_RESULT_MATCHES.png) |![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample1_RESULT_DIFF.png) |
+| 2 | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample2_RESULT.png) | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample2_RESULT_MATCHES.png) | ![](https://github.com/PapriKey/webshotcompare/blob/main/images/sample2_RESULT_DIFF.png) |
 
 sample 1 output:
 ```js
@@ -73,7 +73,7 @@ run();
   shift: { rate: 0.5106382978723404, shiftCount: 24, goodMatchesCount: 47 },//偏移检测结果（偏移像素点/匹配点（总样本）比例，偏移点数量，总样本数量）
   img: {
     diff: '/Users/key/Desktop/mini/js_dip_solve/images/RESULT.png',
-    shift: '/Users/key/Desktop/mini/js_dip_solve/Users/key/Desktop/mini/js_dip_solve/images/RESULT_MATCHES.png'
+    shift: '/Users/key/Desktop/mini/js_dip_solve/images/RESULT_MATCHES.png'
   }
 }
 ```

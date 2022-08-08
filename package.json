@@ -1,6 +1,6 @@
 {
   "name": "webshotcompare",
-  "version": "1.0.5",
+  "version": "1.1.1",
   "description": "Image comparison and offset detection optimized for web screenshots.",
   "main": "src/index.js",
   "scripts": {
