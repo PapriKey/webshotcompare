@@ -23,7 +23,9 @@ sample 1 output:
   shift: { rate: 0.5106382978723404, shiftCount: 24, goodMatchesCount: 47 },
   img: {
     diff: '/Users/key/Desktop/mini/testForImgCom/images/RESULT.png',
-    shift: '/Users/key/Desktop/mini/testForImgCom/node_modules/webshotcompare/Users/key/Desktop/mini/testForImgCom/images/RESULT_MATCHES.png'
+    shift: '/Users/key/Desktop/mini/testForImgCom/images/RESULT_MATCHES.png',
+    diffByPixel: '/Users/key/Desktop/mini/testForImgCom/images/RESULT_DIFF.png'
+
   }
 }
 ```
@@ -37,7 +39,9 @@ sample 2 output:
   shift: { rate: 0, shiftCount: 0, goodMatchesCount: 464 },
   img: {
     diff: '/Users/key/Desktop/mini/testForImgCom/images/RESULT.png',
-    shift: '/Users/key/Desktop/mini/testForImgCom/node_modules/webshotcompare/Users/key/Desktop/mini/testForImgCom/images/RESULT_MATCHES.png'
+    shift: '/Users/key/Desktop/mini/testForImgCom/images/RESULT_MATCHES.png',
+    diffByPixel: '/Users/key/Desktop/mini/testForImgCom/images/RESULT_DIFF.png'
+
   }
 }
 ```
@@ -73,7 +77,8 @@ run();
   shift: { rate: 0.5106382978723404, shiftCount: 24, goodMatchesCount: 47 },//偏移检测结果（偏移像素点/匹配点（总样本）比例，偏移点数量，总样本数量）
   img: {
     diff: '/Users/key/Desktop/mini/js_dip_solve/images/RESULT.png',
-    shift: '/Users/key/Desktop/mini/js_dip_solve/images/RESULT_MATCHES.png'
+    shift: '/Users/key/Desktop/mini/js_dip_solve/images/RESULT_MATCHES.png',
+    diffByPixel: '/Users/key/Desktop/mini/js_dip_solve/images/RESULT_DIFF.png'
   }
 }
 ```
