@@ -312,6 +312,8 @@ async function onRuntimeInitialized(
 }
 
 function loadOpenCV() {
+  if (typeof global.Module?.onRuntimeInitialized == "function")
+    return new Promise((resolve) => resolve());
   return new Promise((resolve) => {
     global.Module = {
       onRuntimeInitialized: resolve,
