@@ -1,12 +1,7 @@
-const cv = require("./opencv.js");
+// const cv = require("./opencv.js");
 const Jimp = require("jimp");
 const path = require("path");
 const pixelMatch = require("pixelmatch");
-// import cv from "@techstark/opencv-js";
-// import Jimp from "jimp";
-// import path from "path";
-// import pixelMatch from "pixelmatch";
-// const __dirname = path.resolve();
 
 async function onRuntimeInitialized(
   imgBeforePath,
@@ -14,6 +9,7 @@ async function onRuntimeInitialized(
   outPutFileName,
   options
 ) {
+  options.debug && console.log("onRuntimeInitialized Run");
   const defaultOptions = {
     pixelMatch_threshold: 0.05, //pixelMatch的阈值
     pixelMatch_diffColor: [255, 255, 255], //pixelMatch的颜色
@@ -315,8 +311,13 @@ async function onRuntimeInitialized(
   return RESULT;
 }
 
-function sleep(time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
+function loadOpenCV() {
+  return new Promise((resolve) => {
+    global.Module = {
+      onRuntimeInitialized: resolve,
+    };
+    global.cv = require("./opencv.js");
+  });
 }
 
 async function webshotCompare(
@@ -325,24 +326,24 @@ async function webshotCompare(
   outPutFileName,
   options = {}
 ) {
-  let result = {};
-  cv.onRuntimeInitialized = async () => {
-    // options.debug && console.log(cv.getBuildInformation());
-    result = await onRuntimeInitialized(
-      imgBeforePath,
-      imgAfterPath,
-      outPutFileName,
-      options
-    );
-  };
-  const maxWaitTime = options.timeOut || 10000;
-  let waitTime = 0;
-  while (Object.keys(result).length === 0 && waitTime <= maxWaitTime) {
-    await sleep(200);
-    waitTime += 200;
-  }
+  await loadOpenCV();
+  let result = null;
 
-  return new Promise((rs) => rs(result));
+  result = await onRuntimeInitialized(
+    imgBeforePath,
+    imgAfterPath,
+    outPutFileName,
+    options
+  );
+
+  return new Promise((resolve) => resolve(result));
 }
 
-module.exports = webshotCompare;
+if (typeof exports === "object" && typeof module === "object")
+  module.exports = webshotCompare;
+else if (typeof define === "function" && define["amd"])
+  define([], function () {
+    return webshotCompare;
+  });
+else if (typeof exports === "object")
+  exports["webshotCompare"] = webshotCompare;

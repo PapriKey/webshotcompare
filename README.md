@@ -91,14 +91,14 @@ run();
     pixelMatch_threshold: 0.05, //pixelMatch的阈值
     pixelMatch_diffColor: [255, 255, 255], //pixelMatch的颜色
     pixelMatch_diffMask: [0, 0, 0], //pixelMatch的遮罩层颜色
-    pixelMatch_DiffPrecentThreshold: 1, //pixelMatch结果的阈值(1-100),超过则超过diff不通过<---------1
-    pixelMatch_imgDistanceThreshold: 0.01, //图片欧氏距离阈值,超过则diff不通过<---------------------2
+    pixelMatch_DiffPrecentThreshold: 1, //像素级对比差异的阈值(1-100),超过则diff不通过<---------1
+    pixelMatch_imgDistanceThreshold: 0.01, //图片欧氏距离阈值,超过则diff不通过<------------------2
     binThreshold_threshold: 100, //二值化的像素阈值
     morphologyEx_kernelSize: 20, //形态学操作的核大小
     rectangleColor: [255, 0, 0, 255], //图像差异矩形的颜色
     knnDistance_threshold: 0.3, //knn的欧式距离阈值（判断两幅图片中两匹配点是否匹配）
     shiftJudge_shiftThreshold: 5, //两匹配点间像素x/y坐标偏移阈值
-    shiftJudge_rateThreshold: 0.3, //偏移点与总样本间比例阈值,超过则shift不通过<---------------------3
+    shiftJudge_rateThreshold: 0.3, //偏移点与总样本间比例阈值,超过则shift不通过<-------------------3
     debug: false, //是否输出调试信息和中间图片
     timeOut : 10000 //超时时间(毫秒)
   };
