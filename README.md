@@ -1,4 +1,6 @@
 ## 💡 Quick overview
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FPapriKey%2Fwebshotcompare.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FPapriKey%2Fwebshotcompare?ref=badge_shield)
+
 
 Image comparison and offset detection optimized for web screenshots.
 **Why is this useful?**
@@ -103,3 +105,7 @@ run();
     timeOut : 10000 //超时时间(毫秒)
   };
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FPapriKey%2Fwebshotcompare.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FPapriKey%2Fwebshotcompare?ref=badge_large)
