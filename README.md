@@ -103,3 +103,6 @@ run();
     timeOut : 10000 //超时时间(毫秒)
   };
 ```
+
+## 🔮 License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPapriKey%2Fwebshotcompare.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FPapriKey%2Fwebshotcompare/refs/branch/main/1f6716391982d52598d8ad1ef0c860c59dd266e0)
