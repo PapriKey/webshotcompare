@@ -19,7 +19,7 @@ sample 1 output:
 {
   diffPass: false,
   shiftPass: false,
-  diff: { diffPrecent: 5.39483400081052, imgDistance: 0.03125 },
+  diff: { diffPercent: 5.39483400081052, imgDistance: 0.03125 },
   shift: { rate: 0.5106382978723404, shiftCount: 24, goodMatchesCount: 47 },
   img: {
     diff: '/Users/key/Desktop/mini/testForImgCom/images/RESULT.png',
@@ -35,7 +35,7 @@ sample 2 output:
 {
   diffPass: true,
   shiftPass: true,
-  diff: { diffPrecent: 0.49524, imgDistance: 0 },
+  diff: { diffPercent: 0.49524, imgDistance: 0 },
   shift: { rate: 0, shiftCount: 0, goodMatchesCount: 464 },
   img: {
     diff: '/Users/key/Desktop/mini/testForImgCom/images/RESULT.png',
@@ -73,7 +73,7 @@ run();
 {
   diffPass: false,//是否通过差异检测
   shiftPass: false,//是否通过偏移检测
-  diff: { diffPrecent: 5.39483400081052, imgDistance: 0.03125 },//差异检测量（像素差异百分比，欧氏距离值）
+  diff: { diffPercent: 5.39483400081052, imgDistance: 0.03125 },//差异检测量（像素差异百分比，欧氏距离值）
   shift: { rate: 0.5106382978723404, shiftCount: 24, goodMatchesCount: 47 },//偏移检测结果（偏移像素点/匹配点（总样本）比例，偏移点数量，总样本数量）
   img: {
     diff: '/Users/key/Desktop/mini/js_dip_solve/images/RESULT.png',
@@ -91,7 +91,7 @@ run();
     pixelMatch_threshold: 0.05, //pixelMatch的阈值
     pixelMatch_diffColor: [255, 255, 255], //pixelMatch的颜色
     pixelMatch_diffMask: [0, 0, 0], //pixelMatch的遮罩层颜色
-    pixelMatch_DiffPrecentThreshold: 1, //像素级对比差异的阈值(1-100),超过则diff不通过<---------1
+    pixelMatch_DiffPercentThreshold: 1, //像素级对比差异的阈值(1-100),超过则diff不通过<---------1
     pixelMatch_imgDistanceThreshold: 0.01, //图片欧氏距离阈值,超过则diff不通过<------------------2
     binThreshold_threshold: 100, //二值化的像素阈值
     morphologyEx_kernelSize: 20, //形态学操作的核大小

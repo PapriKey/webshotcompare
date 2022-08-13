@@ -14,7 +14,7 @@ async function onRuntimeInitialized(
     pixelMatch_threshold: 0.05, //pixelMatch的阈值
     pixelMatch_diffColor: [255, 255, 255], //pixelMatch的颜色
     pixelMatch_diffMask: [0, 0, 0], //pixelMatch的遮罩层颜色
-    pixelMatch_DiffPrecentThreshold: 1, //pixelMatch结果的阈值(1-100),超过则超过diff不通过<---------1
+    pixelMatch_DiffPercentThreshold: 1, //pixelMatch结果的阈值(1-100),超过则超过diff不通过<---------1
     pixelMatch_imgDistanceThreshold: 0.01, //图片欧氏距离阈值,超过则diff不通过<---------------------2
     binThreshold_threshold: 100, //二值化的像素阈值
     morphologyEx_kernelSize: 20, //形态学操作的核大小
@@ -77,14 +77,14 @@ async function onRuntimeInitialized(
   const pixelDiffValue = (pixelDiff / (width * height)) * 100;
   options.debug &&
     console.log(
-      "pixelDiffPrecent:",
+      "pixelDiffPercent:",
       pixelDiffValue,
       "imgDistance:",
       imgDistance,
       "\n-----------------\n"
     );
   if (
-    pixelDiffValue > options.pixelMatch_DiffPrecentThreshold ||
+    pixelDiffValue > options.pixelMatch_DiffPercentThreshold ||
     imgDistance > options.pixelMatch_imgDistanceThreshold
   ) {
     options.debug && console.log("WANING:图片对比不通过");
@@ -92,7 +92,7 @@ async function onRuntimeInitialized(
     RESULT.diffPass = true;
   }
   RESULT.diff = {
-    diffPrecent: pixelDiffValue,
+    diffPercent: pixelDiffValue,
     imgDistance: imgDistance,
   };
   options.debug &&
